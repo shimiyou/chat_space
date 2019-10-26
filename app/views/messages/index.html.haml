@@ -2,22 +2,8 @@
   %p.notice グループを作成しました。
 
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name yahoo
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            %a{href: "/groups/new"}
-              %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-            %a{href: "/users/1611/edit"}
-              %i.fa.fa-cog
-    .groups
-      %a{href: "/groups/3547/messages"}
-        .group
-          %p.group__group-name 群鳳
-          %p.group__latest-message お腹すいた
+  = render 'devise/shared/side_bar'
+
   .chat-main
     .main-header
       .main-header__left-box

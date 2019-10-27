@@ -7,7 +7,9 @@
         .left-header__title
           = @group.name
         %ul.left-header__members
-          Member: yahoo kaito
+          Member : 
+          - @group.users.each do |user|
+            = user.name
           %li.member
       .right-header
         .right-header__button

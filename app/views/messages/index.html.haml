@@ -1,18 +1,20 @@
 .wrapper
   = render 'devise/shared/side_bar'
 
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group{"data-group_id": "3547"}
-          群鳳
-        %ul.main-header__left-box__member-list
-          Member：
-          %li.main-header__left-box__member-list__member kaito
-          %li.main-header__left-box__member-list__member kaito
-          %li.main-header__left-box__member-list__member yahoo
-      %a{href: "/groups/3547/edit"}
-        .main-header__edit-btn Edit
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member : 
+          - @group.users.each do |user|
+            = user.name
+          %li.member
+      .right-header
+        .right-header__button
+          = link_to "Edit", edit_group_path(@group.id)
+
     .messages
       .message{"data-message_id": "8790"}
         .message__upper-info
